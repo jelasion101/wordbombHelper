@@ -3,16 +3,6 @@ local htps = game:GetService("HttpService")
 local tb1 = false
 local tb2 = false
 
-local function getFullName(x)
-	local t = {}
-	while x ~= game do
-		local name = x.Name:gsub('[\"]', '\\%0')
-		table.insert(t, 1, name)
-		x = x.Parent
-	end
-	return 'game["'..table.concat(t, '"]["')..'"]'
-end
-
 local function createGui()
 	local ScreenGui = Instance.new("ScreenGui")
 	local Frame = Instance.new("ImageLabel")
